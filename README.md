@@ -72,7 +72,13 @@ I hope this setup helps others build a secure compute system at home. Below is w
 
 * **Router**  
   * Eero 6 mesh network with 3 nodes  
-  * Static IP reservations for the three main computers  
+  * Static IP reservations for the three main computers
+ 
+* **TODO**
+  * Build a guard server on `Middlebeast`
+    * Install AdGuard Home or Pi-hole on middlebeast.
+    * Create a DNS Rewrite/Record in the software: Map middlebeast.lan (or just middlebeast) to its local IP.
+    * Pros: Works for every device you connect to the VPN (iPad, iPhone, Laptop) without configuring them individually.
 
 ---
 
