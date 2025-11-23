@@ -1,4 +1,4 @@
-I travel a lot, and to make sure I always remain secure, I have set up a reliable netwoek of routers, NAS file servers, VPNs and compute nodes. That way, I can do the majority of my computation secturely on my home machines through a very secure line that goes through my VPN via a Dynamic DNS. Since out internet service provider (xFinity) might change our IP frequenlty, I needed to either install a router system that advertises it's IP to the internet or use a Dynamic DNS. I have leared that I ideally need to have both, since my Dynamic DNS service, [DuckDNS](https://www.duckdns.org/) has a relatively low uptime I also need to use an Eero mech router so I can look up the public facing IP from their app when DuckDNS is down. 
+I travel a lot, and to make sure I always remain secure, I have set up a reliable network of routers, NAS file servers, VPNs and compute nodes. That way, I can do the majority of my computation securely on my home machines through a very secure line that goes through my VPN via a Dynamic DNS. Since our internet service provider (Xfinity) might change our IP frequently, I needed to either install a router system that advertises its IP to the internet or use a Dynamic DNS. I have learned that I ideally need to have both, since my Dynamic DNS service, [DuckDNS](https://www.duckdns.org/) has a relatively low uptime I also need to use an Eero mesh router so I can look up the public facing IP from their app when DuckDNS is down. 
 
 I hope this setup helps others build a secure compute system at home. Below is what I use:
 # Our Machines 
@@ -12,9 +12,9 @@ I hope this setup helps others build a secure compute system at home. Below is w
 # Hardware and Network Setup  
 
 * **Main Gateway Computer (name: middlebeast)**  
-  * **Role**: This is our most stable machine. It is very efficient and does not have a lot of peripherals or power hungry GPUs. As a result it is always on and we use it for any work that requires an always-on machine. Cron jobs, scheduled code, long running scripts, VPN and other servers all run on this machine. No moving parts other than the two fans, no added cards (other than a wifi card), is on a UPS, and as a result it is stable and cost beneficial. This is our gateway to the local network. Is serves as the following: 
+  * **Role**: This is our most stable machine. It is very efficient and does not have a lot of peripherals or power hungry GPUs. As a result it is always on and we use it for any work that requires an always-on machine. Cron jobs, scheduled code, long running scripts, VPN and other servers all run on this machine. No moving parts other than the two fans, no added cards (other than a wifi card), is on a UPS, and as a result it is stable and cost beneficial. This is our gateway to the local network. It serves as the following: 
     * **VPN Server** (via SoftEther)  
-      * You need a VPN server if you are traveling a lot and need to log into your bank, or be able to connect to your home computers from remote. By setting up a VPN server you can put any computer from anywhere on your network and it is significantly easier than ssh tunneling or opening various ports to different computers on your router.
+      * You need a VPN server if you are traveling a lot and need to log into your bank, or be able to connect to your home computers from remote locations. By setting up a VPN server you can put any computer from anywhere on your network and it is significantly easier than ssh tunneling or opening various ports to different computers on your router.
       * Requires opening 3 ports on Eero and assigning a static internal IP reservation.  
       * ChatGPT wrote all the shell code for this.  
     * **Secondary NAS Backup** (16TB of loud HDD stored in a separate storage room)  
@@ -25,11 +25,11 @@ I hope this setup helps others build a secure compute system at home. Below is w
       * RDP is not accessible externally.  
       * Gemini-Pro 2.5 provided the setup code. Cinnamon is pleasant to work with and doesn’t noticeably slow the machine.  
     * **Dynamic DNS**  
-      * Using [Duck DNS](https://www.duckdns.org/). I previously used No-IP without issues, but DuckDNS is both free and more reliable.  
+      * Using [Duck DNS](https://www.duckdns.org/). I previously used No-IP without issues but their free tier is not great and constantly expires. DuckDNS is a great free project, though has a lower up-time. 
       * Setup steps:  
         * Log in to DuckDNS with your Google account and create a subdomain like `subdomain.duckdns.org`.  
         * Follow the [Linux cron setup](https://www.duckdns.org/install.jsp) on your machine.  
-    * **Recovery**: Designed for fail-safe recovery—systems should automatically restart after blackouts or failures. Not on a UPS, but protected by a surge protector.  
+    * **Recovery**: Designed for fail-safe recovery—systems should automatically restart after blackouts or failures. It is already on a UPS. 
 
   * **Hardware**:  
     * Low-cost Dell OptiPlex 3010 DT ([spec sheet](https://i.dell.com/sites/doccontent/business/smb/merchandizing/en/Documents/Dell_OptiPlex_3010_spec_sheet.pdf))  
@@ -46,7 +46,7 @@ I hope this setup helps others build a secure compute system at home. Below is w
     * Wayland for local sessions (though currently no monitor is attached)  
     * URL: [Middlebeast](https://middlebeast:9090/)  
     * SSH: `ssh <user>@middlebeast`
-    * **NextCloud**. self-hosted local filesharing tool similar to drop box 
+    * **NextCloud**. self-hosted local filesharing tool similar to Dropbox 
 
   * **TODO**:
      * Move the nextcloud setup from the main location to a sub-domain on the localhost 
@@ -85,7 +85,7 @@ For remote access, I use the **Windows** app on iPad and iPhone to connect to RD
 ---
 
 # IOT devices
-I have bought some Amazon IOT smart plugs so I can power cycle my devices remotely but I have not installed them all yet.
+I have bought some Amazon IoT smart plugs so I can power cycle my devices remotely but I have not installed them all yet.
 
 ---
 
