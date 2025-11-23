@@ -1,5 +1,6 @@
-I hope this setup helps others build a secure compute system at home. Below is what I use:
+I travel a lot, and to make sure I always remain secure, I have set up a reliable netwoek of routers, NAS file servers, VPNs and compute nodes. That way, I can do the majority of my computation secturely on my home machines through a very secure line that goes through my VPN via a Dynamic DNS. Since out internet service provider (xFinity) might change our IP frequenlty, I needed to either install a router system that advertises it's IP to the internet or use a Dynamic DNS. I have leared that I ideally need to have both, since my Dynamic DNS service, [DuckDNS](https://www.duckdns.org/) has a relatively low uptime I also need to use an Eero mech router so I can look up the public facing IP from their app when DuckDNS is down. 
 
+I hope this setup helps others build a secure compute system at home. Below is what I use:
 # Our Machines 
 
 * Main gateway computer (mid range Ubuntu)
@@ -80,6 +81,11 @@ I hope this setup helps others build a secure compute system at home. Below is w
 iPhones and iPads connect to the network via the VPN hosted on *middlebeast*. They can also print through the AirPrint protocol using the Raspberry Pi 5 (*microbeast*).  
 
 For remote access, I use the **Windows** app on iPad and iPhone to connect to RDP even on the Linux machines. With an external mouse and keyboard on iPad, this setup works perfectly. The same configuration can also be used on my MacBook Pro to connect to the home compute system.  
+
+---
+
+# IOT devices
+I have bought some Amazon IOT smart plugs so I can power cycle my devices remotely but I have not installed them all yet.
 
 ---
 
