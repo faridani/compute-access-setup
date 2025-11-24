@@ -1,3 +1,5 @@
+<img src="secure computing.png" alt="drawing" width="450"/>
+
 I travel a lot, and to make sure I always remain secure, I have set up a reliable network of routers, NAS file servers, VPNs and compute nodes. That way, I can do the majority of my computation securely on my home machines through a very secure line that goes through my VPN via a Dynamic DNS. When I am away the only thing that goes through my hotel wifi is the pixels from my remote desktop server, so no data crosses the borders. Since our internet service provider (Xfinity) might change our IP frequently, I also needed to either install a router system that advertises its IP to the internet or use a Dynamic DNS. I have learned that I ideally need to have both, since my Dynamic DNS service, [DuckDNS](https://www.duckdns.org/) has a relatively low uptime compared to commercial solutions, I also need to use an Eero mesh router so I can look up the public facing IP from their app when DuckDNS is down. 
 
 I hope this setup helps others build a secure compute system at home. Below is what I use:
