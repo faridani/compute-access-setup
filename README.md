@@ -1,6 +1,7 @@
-I travel a lot, and to make sure I always remain secure, I have set up a reliable network of routers, NAS file servers, VPNs and compute nodes. That way, I can do the majority of my computation securely on my home machines through a very secure line that goes through my VPN via a Dynamic DNS. Since our internet service provider (Xfinity) might change our IP frequently, I needed to either install a router system that advertises its IP to the internet or use a Dynamic DNS. I have learned that I ideally need to have both, since my Dynamic DNS service, [DuckDNS](https://www.duckdns.org/) has a relatively low uptime I also need to use an Eero mesh router so I can look up the public facing IP from their app when DuckDNS is down. 
+I travel a lot, and to make sure I always remain secure, I have set up a reliable network of routers, NAS file servers, VPNs and compute nodes. That way, I can do the majority of my computation securely on my home machines through a very secure line that goes through my VPN via a Dynamic DNS. When I am away the only thing that goes through my hotel wifi is the pixels from my remote desktop server, so no data crosses the borders. Since our internet service provider (Xfinity) might change our IP frequently, I also needed to either install a router system that advertises its IP to the internet or use a Dynamic DNS. I have learned that I ideally need to have both, since my Dynamic DNS service, [DuckDNS](https://www.duckdns.org/) has a relatively low uptime compared to commercial solutions, I also need to use an Eero mesh router so I can look up the public facing IP from their app when DuckDNS is down. 
 
 I hope this setup helps others build a secure compute system at home. Below is what I use:
+
 # Our Machines 
 
 * Main gateway computer (mid range Ubuntu)
@@ -35,7 +36,7 @@ I hope this setup helps others build a secure compute system at home. Below is w
     * Low-cost Dell OptiPlex 3010 DT ([spec sheet](https://i.dell.com/sites/doccontent/business/smb/merchandizing/en/Documents/Dell_OptiPlex_3010_spec_sheet.pdf))  
     * CPU: Intel(R) Core(TM) i5-3470 @ 3.20GHz, 4 cores  
     * Memory: 16GB DDR3  
-    * PCIe Wi-Fi: AX200 (no cable)  
+    * PCIe Wi-Fi: AX200 (unfortunately I have not been able to find a reliable way to connect this to our Ethernet via a cable so it is on Wifi which sometimes makes the VPN disconnect. My plan is to connect this machine directly to our router like our NAS server)  
     * Storage:  
       * SSD: 256GB (Corsair Force 3)  
       * HDD: 16TB (Seagate Exos X16 – [datasheet](https://www.seagate.com/www-content/datasheets/pdfs/exos-x16-DS2011-1-1904US-en_US.pdf))
